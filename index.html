@@ -818,7 +818,7 @@ const quizData = [
 
             // Bước 1: Tìm và lưu trữ các cụm từ khớp
             sortedKeys.forEach(key => {
-                const regex = new RegExp(`(\\b|[.,!?\\n])(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})(\\b|[.,!?\\n])`, 'gi');
+                const regex = new RegExp(`(\\b|[.,!?\\n\\s]|^)(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})(\\b|[.,!?\\n\\s]|$)`, 'gi');
                 let match;
                 while ((match = regex.exec(html)) !== null) {
                     const start = match.index + match[1].length;
